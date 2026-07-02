@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Grind Coffee Co. — Cozy Workspace & Fresh Roasts</title>
+    
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Linking External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Ambient Floating Gradients -->
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+
+    <!-- STICKY NAVBAR -->
+    <header id="navbar">
+        <a href="#" class="logo">
+            <i class="fa-solid fa-mug-hot"></i> THE DAILY GRIND.
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#menu-section">Menu Specials</a></li>
+            <li><a href="#facts">Coffee Secrets</a></li>
+            <li><a href="#booking" class="nav-booking-btn">Contact & Book</a></li>
+        </ul>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Cozy Hub.<br>Ethically <span>Roasted.</span></h1>
+                <p>Step inside Marcus Sterling's premium independent coffee hideout. Tucked directly into the fast-moving heart of downtown, we roast our own ethically sourced beans, assemble artisanal pastries, and curate comfortable work nooks designed for remote creators.</p>
+                <div class="cta-group">
+                    <a href="#booking" class="btn-primary">Reserve Workspace</a>
+                    <a href="#menu-section" class="btn-secondary">Explore Menu <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="hero-graphic">
+                <div class="cozy-mug-container">
+                    <div class="steam-container">
+                        <span class="steam-line"></span>
+                        <span class="steam-line"></span>
+                        <span class="steam-line"></span>
+                    </div>
+                    <i class="fa-solid fa-mug-saucer mug-body"></i>
+                    <div class="circle-badge">100%<br>House Roast</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REFRESHING DYNAMIC MENU SECTION -->
+    <section id="menu-section">
+        <div class="section-header">
+            <h2>The Daily Grind Menu</h2>
+            <p>Our dynamic boards update hourly! Click below to grind out the fresh, randomly selected special of the day with live cozy pricing.</p>
+        </div>
+
+        <div class="menu-controller">
+            <button class="refresh-btn" onclick="triggerManualGrind()">
+                <i class="fa-solid fa-gear" id="gear-icon"></i> Grind & Refresh Board
+            </button>
+            <div class="auto-refresh-tag">
+                <span class="pulse-dot"></span> Auto-shuffling specials
+            </div>
+        </div>
+
+        <div class="menu-grid" id="menu-container">
+            <!-- 1. Cappuccino -->
+            <div class="menu-card" data-index="0">
+                <div class="menu-card-badge">Chef's Warm Special</div>
+                <div class="menu-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                <div class="menu-details">
+                    <h3>Cappuccino</h3>
+                    <p>Double shot of house roaster espresso crowned with thick, perfectly velvety micro-foamed milk.</p>
+                </div>
+                <div class="menu-footer">
+                    <div class="menu-price">
+                        <span class="original-price" id="orig-price-0"></span>
+                        <span class="final-price" id="price-0">$4.50</span>
+                    </div>
+                    <button class="order-btn-stub">Order Fresh</button>
+                </div>
+            </div>
+
+            <!-- 2. Cold Coffee -->
+            <div class="menu-card" data-index="1">
+                <div class="menu-card-badge">Cozy Cool-down Special</div>
+                <div class="menu-icon"><i class="fa-solid fa-glass-water"></i></div>
+                <div class="menu-details">
+                    <h3>Cold Coffee</h3>
+                    <p>Chilled double espresso whipped gently with creamy organic cold milk and layered over sweet rock ice.</p>
+                </div>
+                <div class="menu-footer">
+                    <div class="menu-price">
+                        <span class="original-price" id="orig-price-1"></span>
+                        <span class="final-price" id="price-1">$5.00</span>
+                    </div>
+                    <button class="order-btn-stub">Order Fresh</button>
+                </div>
+            </div>
+
+            <!-- 3. Latte -->
+            <div class="menu-card" data-index="2">
+                <div class="menu-card-badge">Barista Highlight</div>
+                <div class="menu-icon"><i class="fa-solid fa-mug-saucer"></i></div>
+                <div class="menu-details">
+                    <h3>Latte</h3>
+                    <p>Silky steamed milk combined with our medium-roast signature espresso blend, featuring delicate surface art.</p>
+                </div>
+                <div class="menu-footer">
+                    <div class="menu-price">
+                        <span class="original-price" id="orig-price-2"></span>
+                        <span class="final-price" id="price-2">$4.75</span>
+                    </div>
+                    <button class="order-btn-stub">Order Fresh</button>
+                </div>
+            </div>
+
+            <!-- 4. Garlic Bread -->
+            <div class="menu-card" data-index="3">
+                <div class="menu-card-badge">Crispy Bestseller</div>
+                <div class="menu-icon"><i class="fa-solid fa-bread-slice"></i></div>
+                <div class="menu-details">
+                    <h3>Garlic Bread</h3>
+                    <p>Toasted artisanal sourdough slab brushed with crushed local garlic cloves, wild rosemary, and dynamic olive oil.</p>
+                </div>
+                <div class="menu-footer">
+                    <div class="menu-price">
+                        <span class="original-price" id="orig-price-3"></span>
+                        <span class="final-price" id="price-3">$6.20</span>
+                    </div>
+                    <button class="order-btn-stub">Order Fresh</button>
+                </div>
+            </div>
+
+            <!-- 5. Cheese Sandwich -->
+            <div class="menu-card" data-index="4">
+                <div class="menu-card-badge">Chef's Warm Special</div>
+                <div class="menu-icon"><i class="fa-solid fa-cheese"></i></div>
+                <div class="menu-details">
+                    <h3>Cheese Sandwich</h3>
+                    <p>Melted sharp white cheddar, smoked gouda, and fresh sage layered between our thick home-baked rustic crusts.</p>
+                </div>
+                <div class="menu-footer">
+                    <div class="menu-price">
+                        <span class="original-price" id="orig-price-4"></span>
+                        <span class="final-price" id="price-4">$6.80</span>
+                    </div>
+                    <button class="order-btn-stub">Order Fresh</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COFFEE SECRETS SECTION -->
+    <section id="facts">
+        <div class="section-header">
+            <h2>Roaster's Secrets</h2>
+            <p>Expand your knowledge of the brew while you enjoy your warm, comfortable table workspace.</p>
+        </div>
+        <div class="facts-container">
+            <div class="fact-card">
+                <div class="fact-graphic-space">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+                <h3>The "Bean" Myth</h3>
+                <p>Coffee beans are actually seeds! They are nestled inside thick, sweet cherries that grow on woody highland shrubs. When we roast them, they develop the delicious caramel flavors we love.</p>
+            </div>
+
+            <div class="fact-card">
+                <div class="fact-graphic-space">
+                    <i class="fa-solid fa-wind"></i>
+                </div>
+                <h3>Aroma Healing</h3>
+                <p>Smelling roasted coffee directly triggers a change in your brain's protein structures, lowering tension levels. It acts as an instant relaxer before you take your first sip of the day.</p>
+            </div>
+
+            <div class="fact-card">
+                <div class="fact-graphic-space">
+                    <i class="fa-solid fa-hourglass-start"></i>
+                </div>
+                <h3>The Snack Ball Past</h3>
+                <p>Before drinking coffee as a beverage, early African tribes combined raw crushed coffee seeds with animal fats to roll up quick-energy snack bites to fuel them on journeys.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORKSPACE BOOKING & CONTACT FORM -->
+    <section id="booking">
+        <div class="booking-box">
+            <div class="booking-box-content">
+                <h2>Secure Your Cozy Workspace</h2>
+                <p>Enjoy guaranteed ultra-fast Wi-Fi, unlimited roasted inspiration, and your private nook table.</p>
+                
+                <form class="booking-form" id="resForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required placeholder="Marcus Sterling">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required placeholder="marcus@dailygrind.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Choose Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time Slot Selection</label>
+                        <select id="time">
+                            <option>Sunrise Focus (7 AM - 11 AM)</option>
+                            <option>Afternoon Flow (11 AM - 3 PM)</option>
+                            <option>Sunset Grind (3 PM - 7 PM)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit">Confirm My Reservation Spot</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREMIUM FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>THE DAILY GRIND.</h3>
+                <p>Crafting exceptional ethically sourced roasts and cozy work spaces in the middle of a busy downtown bustle. Built by coffee obsessives for creators, builders, and dreamers.</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Hours</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Mon - Fri: 7:00 AM - 8:00 PM</a></li>
+                    <li><a href="#home">Sat - Sun: 8:00 AM - 9:00 PM</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Our Philosophy</a></li>
+                    <li><a href="#menu-section">Daily Specials</a></li>
+                    <li><a href="#facts">Coffee Secrets</a></li>
+                    <li><a href="#booking">Book Your Table</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul class="footer-contact-info">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>182 Craft Lane, Roasters District, Downtown Area</span>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+1 (555) 324-5982</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>marcus@thedailygrind.co</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Daily Grind Coffee Co. All Cozy Rights Reserved.</p>
+            <p>Designed for Marcus Sterling | Independent & Sustainable</p>
+        </div>
+    </footer>
+
+    <!-- Linking External JS -->
+    <script src="script.js"></script>
+</body>
+</html>
